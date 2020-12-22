@@ -8,3 +8,6 @@ MiningCollege - проект для мониторинга участия сту
 3. Загрузить входные данные (manage.py loaddata initial_data.json)
 4. Создать суперпользователя (manage.py createsuperuser)
 5. Запустить веб сервер (manage.py runserver)
+
+При желаний можно проверить flake8
+$ flake8 --exclude venv,migrations,models --ignore E501
