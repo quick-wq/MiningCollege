@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index_style.css' %}">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Название</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <!-- <a class="nav-link active" href="#">Home</a> -->
+                    <a class="nav-link" href="http://kumgk.ru" target="_blank">Сайт ГАПОУ КГК</a>
+                    <a class="nav-link" href="personal_area">Личный кабинет</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Мониторинг активности</h1>
+            <p class="lead">Сервис предоставляет возможность мониторить свою активность на разных мероприятиях ГАПОУ КГК</p>
+            <p class="lead">
+                {% if user.is_authenticated %}
+                    <a href="personal_area" class="btn btn-lg btn-secondary">Личный кабинет</a>
+                {% else %}
+                    <a href="authorization" class="btn btn-lg btn-secondary">Авторизация</a>
+                {% endif %}
+            </p>
+        </main>
+
+        <footer class="mastfoot mt-auto text-center">
+            <div class="inner">
+                <p>Марченко Андрей &copy; 2020-{% now "Y" %}</p>
+            </div>
+        </footer>
+    </div>
+{% endblock %}

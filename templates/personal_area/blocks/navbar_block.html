@@ -1,0 +1,74 @@
+{% block content %}
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="collapse navbar-collapse" id="navbars">
+            <ul class="navbar-nav mr-auto">
+                <!-- Личный кабинет -->
+                {% if view == 'personal_area' %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url "personal_area" %}">Личный кабинет <span class="sr-only">(current)</span></a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "personal_area" %}">Личный кабинет <span class="sr-only">(current)</span></a>
+                    </li>
+                {% endif %}
+
+                <!-- Мой мероприятия -->
+                {% if view == 'my_activities' %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url "my_activities" %}">Мой мероприятия <span class="sr-only">(current)</span></a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "my_activities" %}">Мой мероприятия</a>
+                    </li>
+                {% endif %}
+
+                <!-- Все мероприятия -->
+                {% if view == 'all_activities' %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url "all_activities" %}">Все мероприятия <span class="sr-only">(current)</span></a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "all_activities" %}">Все мероприятия</a>
+                    </li>
+                {% endif %}
+
+                <!-- Блок доступный только администраторам -->
+                {% if user.is_staff %}
+                    <!-- Статистика -->
+                    {% if view == 'statistics' %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url "statistics" %}">Статистика &#128275; <span class="sr-only">(current)</span></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "statistics" %}">Статистика &#128275;</a>
+                        </li>
+                    {% endif %}
+
+                    <!-- Подтверждения -->
+                    {% if view == 'confirmations' %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url "confirmations" %}">Подтверждения &#128275; <span class="sr-only">(current)</span></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "confirmations" %}">Подтверждения &#128275;</a>
+                        </li>
+                    {% endif %}
+
+                    <!-- Панель администратора -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">Панель администратора &#128275;</a>
+                    </li>
+                {% endif %}
+            </ul>
+
+            <!-- Выход -->
+            <a href="{% url "logout" %}" class="btn btn-secondary my-2 my-sm-0">Выход</a>
+
+        </div>
+    </nav>
+{% endblock %}

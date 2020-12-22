@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'my_style.css' %}">
+
+    {% include "personal_area/blocks/navbar_block.html" %}
+
+    <main role="main" class="container">
+        <div class="starter-template">
+            <h4>Все мероприятия</h4>
+            <p class="lead">На данной странице вы можете просмотреть<br>последние прошедшие мероприятия</p>
+            <br><br>
+            <div class="card" style="background-color: lightgray">
+                <div class="card-body">
+                    <h5 class="card-title">Название мероприятия №1</h5>
+                    <p class="card-text">Мероприятие было направленно на то-то то-то. В рамкам того-то.</p>
+                    <p class="card-text"><small class="text-muted">Мероприятие проходило с 05.12.2020 по 05.12.2020г. Всего участвовало 43 человека.</small></p>
+                    <a href="#" class="btn btn-primary">Я участвовал!</a>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="background-color: lightgray">
+                <div class="card-body">
+                    <h5 class="card-title">Название мероприятия №2</h5>
+                    <p class="card-text">Мероприятие было направленно на то-то то-то. В рамкам того-то.</p>
+                    <p class="card-text"><small class="text-muted">Мероприятие проходило с 01.12.2020 по 14.12.2020г. Всего участвовало 116 человек.</small></p>
+                    <a href="#" class="btn btn-primary">Я участвовал!</a>
+                </div>
+            </div>
+
+            <br>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary active">1</button>
+                <button type="button" class="btn btn-secondary">2</button>
+                <button type="button" class="btn btn-secondary">3</button>
+                <button type="button" class="btn btn-secondary">4</button>
+                <button type="button" class="btn btn-secondary">5</button>
+            </div>
+        </div>
+    </main>
+
+    {% include "personal_area/blocks/footer_block.html" %}
+{% endblock %}

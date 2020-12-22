@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'my_style.css' %}">
+
+    {% include "personal_area/blocks/navbar_block.html" %}
+
+    <main role="main" class="container">
+        <div class="starter-template">
+            <h4>Ваша активность</h4>
+            <p class="lead">На данной странице вы можете просмотреть<br>в каких мероприятиях вы участвовали</p>
+            <br><br>
+            <div class="card" style="background-color: lightgray">
+                <div class="card-body">
+                    <h5 class="card-title">Мероприятие №1 (организатор)</h5>
+                    <p class="card-text">Мероприятие проходило там-то, в целях таких-то</p>
+                    <p class="card-text"><small class="text-muted">Мероприятие проходило с 01.12.2020 по 14.12.2020г. Всего участвовало 76 человек.</small></p>
+                    <a href="" class="btn btn-primary disabled">Ожидает подтверждения...</a>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="background-color: lightgray">
+                <div class="card-body">
+                    <h5 class="card-title">Мероприятие №2 (студент)</h5>
+                    <p class="card-text">Мероприятие проходило там-то, в целях таких-то</p>
+                    <p class="card-text"><small class="text-muted">Мероприятие проходило с 01.12.2020 по 14.12.2020г. Всего участвовало 76 человек.</small></p>
+                    <a href="#" class="btn btn-success disabled">Участие подтверждено!</a>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="background-color: lightgray">
+                <div class="card-body">
+                    <h5 class="card-title">Мероприятие №2 (жюри)</h5>
+                    <p class="card-text">Мероприятие проходило там-то, в целях таких-то</p>
+                    <p class="card-text"><small class="text-muted">Мероприятие проходило с 01.12.2020 по 14.12.2020г. Всего участвовало 76 человек.</small></p>
+                    <a href="#" class="btn btn-danger disabled">Участие отклонено!</a>
+                </div>
+            </div>
+            <br>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary active">1</button>
+                <button type="button" class="btn btn-secondary">2</button>
+                <button type="button" class="btn btn-secondary">3</button>
+            </div>
+        </div>
+    </main>
+
+    {% include "personal_area/blocks/footer_block.html" %}
+{% endblock %}

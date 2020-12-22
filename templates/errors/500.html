@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ошибка 404!{% endblock %}
+
+{% block content %}
+    <br><br>
+    <div class="text-center">
+        <img class="mb-4" src="{% static "logo.png" %}" alt="Логотип ГАПОУ КГК" width="128" height="168">
+        <h1 class="h3 mb-3 font-weight-normal">Внутренняя ошибка сервера!</h1>
+        <br><a href="{% url 'personal_area' %}">Вернуться в личный кабинет</a>
+        <br><a href="{% url 'index' %}">Вернуться на сайт</a>
+        <p class="mt-5 mb-3 text-muted">Марченко Андрей &copy; 2020-{% now "Y" %}</p>
+    </div>
+{% endblock %}

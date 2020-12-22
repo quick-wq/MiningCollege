@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login_style.css' %}">
+    <div class="text-center">
+    <form class="form-signin" method="post">
+        <img class="mb-4" src="{% static "logo.png" %}" alt="Логотип ГАПОУ КГК" width="128" height="168">
+        <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
+        {% if form.errors %}
+            <p style="color: red">Ошибка регистраций!</p>
+        {% endif %}
+        {% csrf_token %}
+        {{ form.username|as_crispy_field }}
+        {{ form.email|as_crispy_field }}
+        {{ form.password|as_crispy_field }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
+        <p class="small">Нажимая кнопку зарегистрироваться я соглашаюсь со всем чем можно</p>
+        <br><a href="{% url 'password_reset' %}">Восстановить пароль</a>
+        <br><a href="{% url 'index' %}">Вернуться на сайт</a>
+        <p class="mt-5 mb-3 text-muted">Марченко Андрей &copy; 2020-{% now "Y" %}</p>
+    </form>
+    </div>
+{% endblock %}

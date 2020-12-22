@@ -1,0 +1,11 @@
+[
+  {"model": "personal_area.userposition", "pk": 1, "fields": {"title": "Студент", "multiplier": 1.0}},
+  {"model": "personal_area.userposition", "pk": 2, "fields": {"title": "Преподаватель", "multiplier": 1.0}},
+  {"model": "personal_area.userposition", "pk": 3, "fields": {"title": "Сотрудник", "multiplier": 1.0}},
+
+  {"model": "personal_area.role", "pk": 1, "fields": {"title": "Зритель", "multiplier": 0.5}},
+  {"model": "personal_area.role", "pk": 2, "fields": {"title": "Участник", "multiplier": 1.0}},
+  {"model": "personal_area.role", "pk": 3, "fields": {"title": "Организатор", "multiplier": 3.0}},
+  {"model": "personal_area.role", "pk": 4, "fields": {"title": "Эксперт", "multiplier": 2.0}},
+  {"model": "personal_area.role", "pk": 5, "fields": {"title": "Наставник", "multiplier": 1.5}}
+]

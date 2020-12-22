@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'my_style.css' %}">
+
+    {% include "personal_area/blocks/navbar_block.html" %}
+
+    <main role="main" class="container">
+        <div class="starter-template">
+            <h4>Подтверждения</h4>
+            <p class="lead">На данной странице вы можете просмотреть<br>ожидающие подтверждения</p>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Марченко Андрей из группы ПО-413 хочет подтвердить своё участие в мероприятий ************************************************************ в роли студента
+                <a href="#" class="btn btn-danger">Отказать</a>
+                &nbsp;&nbsp;
+                <a href="#" class="btn btn-success">Подтвердить</a>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 100%">
+                Вася Пупкин из группы ПО-215 хочет подтвердить своё участие в мероприятий ************************************************************ в роли организатора
+                <a href="#" class="btn btn-danger">Отказать</a>
+                &nbsp;&nbsp;
+                <a href="#" class="btn btn-success">Подтвердить</a>
+            </li>
+        </ul>
+    </main>
+
+    {% include "personal_area/blocks/footer_block.html" %}
+{% endblock %}

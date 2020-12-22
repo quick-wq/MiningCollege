@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'my_style.css' %}">
+
+    {% include "personal_area/blocks/navbar_block.html" %}
+
+    <main role="main" class="container">
+        <div class="starter-template">
+            <h4>Личный кабинет</h4>
+            <p class="lead">На данной странице вы можете просмотреть<br>информацию о своём профиле</p>
+            <br><br>
+            <p class="lead">Имя: {{ user.get_full_name }}</p>
+            <p class="lead">Статус: {{ user.userprofile.position }}</p>
+            {% if user.userprofile.group %}
+                <p class="lead">Группа: {{ user.userprofile.group }}</p>
+            {% endif %}
+            <p class="lead">Почта: {{ user.email }}</p>
+            <br>
+            <p class="lead">Тут какая нибудь информация<br> И тут тоже</p>
+        </div>
+    </main>
+
+    {% include "personal_area/blocks/footer_block.html" %}
+{% endblock %}
