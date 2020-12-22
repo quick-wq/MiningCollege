@@ -6,14 +6,15 @@
 ```
 git clone https://github.com/MrSmitix/MiningCollege
 ```
-2. Создать виртуальное окружение и установить необходимые модули (```pip install -r requirements.txt```)
+2. Утановить необходимые модули в виртуальном окружении
+```pip install -r requirements.txt```
 3. Создать миграцию (`manage.py makemigrations`)
-4. Выполнить миграцию (`manage.py migrate`)
-5. Загрузить входные данные (`manage.py loaddata initial_data.json`)
-6. Создать суперпользователя (`manage.py createsuperuser`)
-7. Запустить веб сервер (`manage.py runserver`)
+    1. Выполнить миграцию  (`manage.py migrate`)
+4. Загрузить входные данные (`manage.py loaddata initial_data.json`)
+5. Создать суперпользователя (`manage.py createsuperuser`)
+6. Запустить веб сервер (`manage.py runserver`)
 
 При желании можно проверить `flake8`
-```
-$ flake8 --exclude venv, migrations, models --ignore E501
-```
+> ```
+> $ flake8 --exclude venv, migrations, models --ignore E501
+> ```
