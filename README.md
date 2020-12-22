@@ -3,9 +3,9 @@
 
 Для запуска проекта необходимо
 1. Клонировать репозиторий:
-```
-git clone https://github.com/MrSmitix/MiningCollege
-```
+> ```
+> git clone https://github.com/MrSmitix/MiningCollege
+> ```
 2. Утановить необходимые модули в виртуальном окружении
 ```pip install -r requirements.txt```
 3. Создать миграцию (`manage.py makemigrations`)
